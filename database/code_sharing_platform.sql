@@ -42,6 +42,7 @@ CREATE TABLE `admins` (
 
 INSERT INTO `admins` (`username`, `email`, `name`, `registered_on`, `admin_password`, `user_avatar`) VALUES
 ('Dhvanil', 'dhvanilpansuriya2005@gmail.com', 'Dhvanil Pansuriya', '2023-04-30 18:23:11', '827ccb0eea8a706c4c34a16891f84e7b', 'Dhvanil.jpg'),
+('Kaif', 'kaif@gmail.com', 'Kazi Mohhamad Kaif', '2023-04-30 18:23:11', '827ccb0eea8a706c4c34a16891f84e7b', NULL),
 ('khatrifaiz', 'faizkhatri00@gmail.com', 'Khatri Faiz', '2023-04-30 18:23:11', '59e7d3ff65d3753e4fa7a70022893611', NULL);
 
 -- --------------------------------------------------------
