@@ -1,0 +1,455 @@
+@font-face {
+  font-family: "LexendDeca";
+  src: url(../fonts/LexendDeca-VariableFont_wght.ttf);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "LexendDeca", sans-serif;
+  background: #0f001d;
+  color: #fff;
+}
+p {
+  line-height: 1.5rem;
+}
+a {
+  color: #ffffff;
+  text-decoration: none;
+}
+button,
+.btn,
+input {
+  border: none;
+  font-family: "LexendDeca";
+}
+input:focus {
+  border: none;
+  outline: none;
+}
+a.btn,
+button {
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 500;
+  padding: 12px 18px;
+  border-radius: 5px;
+  display: inline-block;
+  outline: none;
+}
+#search-input {
+  font-size: 16px;
+  font-weight: 500;
+  padding: 12px 18px;
+  border-radius: 5px;
+  display: inline-block;
+  outline: none;
+}
+li {
+  list-style: none;
+}
+
+/*-------- Header Styling --------*/
+
+header {
+  padding: 12px 60px;
+  background: #06000b;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#create-new-snippet-btn {
+  color: #fff;
+  border: none;
+  background-color: #e100ff;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 500;
+}
+header nav {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+header .user-details {
+  display: flex;
+  position: relative;
+}
+header .user-details .user-navigation {
+  position: absolute;
+  right: 0;
+  top: 100%;
+  width: 150px;
+  border-radius: 10px;
+  display: none;
+  background: #47424a;
+}
+header .user-details .user-navigation p {
+  border-bottom: 1px solid #575757;
+}
+header .user-details .user-navigation p,
+header .user-details .user-navigation a {
+  background: #47424a;
+  padding: 12px;
+  transition: 0.1s;
+}
+header .user-details .user-navigation a:hover {
+  background-color: #1e1427;
+}
+header .user-details .user-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 4px;
+  overflow: hidden;
+  cursor: pointer;
+}
+header .user-details .user-avatar img {
+  width: 100%;
+  height: 100%;
+}
+/*--------- Footer Styling ----------*/
+footer {
+  background: #452f57;
+  padding: 12px 60px;
+  display: flex;
+  justify-content: center;
+}
+
+/*------- Snippets Grid Styling --------*/
+
+.snippet-grid {
+  padding: 30px 60px;
+}
+.snippet-grid .container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+/*--------- Styling Snippet Card ----------*/
+.snippet-card {
+  padding: 24px;
+  border-radius: 10px;
+  background-color: #1e1427;
+}
+.snippet-card h4 {
+  font-size: 18px;
+}
+.snippet-card .author-details {
+  display: flex;
+  gap: 12px;
+  margin-top: 24px;
+}
+.snippet-card .author-details .author-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.snippet-card .author-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.snippet-card .author-details address {
+  font-style: normal;
+}
+.snippet-card .snippet-actions {
+  display: flex;
+  justify-content: end;
+  margin-top: 24px;
+}
+.snippet-card .snippet-actions .view-code-btn {
+  background: #7f00ff;
+}
+
+/*------------ Styling Homepage -------------*/
+#homepage #hero .hero-content {
+  text-align: center;
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+#homepage h1 {
+  font-size: 72px;
+  background: -webkit-linear-gradient(-45deg, #7f00ff, #e100ff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 32px;
+}
+#homepage #hero #search-bar {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+#homepage .snippets {
+  background: #06000b;
+}
+#homepage .snippets h2 {
+  padding: 60px;
+  font-size: 48px;
+  text-align: center;
+  display: block;
+}
+/*--------- Styling Editor ------------------*/
+#editor-page form {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/*----------- Editor Header -------------*/
+.editor-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.editor-title .title-actions {
+  display: flex;
+  height: 100%;
+}
+#snippet-title {
+  font-size: 1.3rem;
+  background: transparent;
+  padding: 0;
+  color: #fff;
+  border: 1px solid #fff;
+  width: 100%;
+  height: 100%;
+}
+#snippet-title:read-only {
+  border: none;
+}
+#snippet-title-edit-btn,
+#snippet-title-submit-btn {
+  font-size: 12px;
+  padding: 2px;
+}
+#save-snippet-btn {
+  background-color: #02c39a;
+  color: #fff;
+}
+#snippet-title-submit-btn {
+  display: none;
+}
+/***----------- Editor --------------***/
+
+#editor-page main {
+  display: grid;
+  gap: 14px;
+  grid-template-columns: repeat(2, 1fr);
+  height: 100%;
+}
+#editor,
+#preview-container {
+  display: flex;
+  flex-direction: column;
+}
+#preview-container h3 {
+  padding: 12px 18px;
+}
+#language-tab-bar {
+  display: flex;
+}
+.language-tab {
+  padding: 12px 18px;
+  background-color: #29262b;
+  border: 1px solid #47424a;
+  cursor: pointer;
+}
+.language-tab:hover {
+  background-color: #1c1a1e;
+}
+.language-tab[data-display="active"] {
+  background-color: #1c1a1e;
+}
+#editor-textareas {
+  width: 100%;
+  height: 100%;
+}
+#editor-textareas textarea[data-display="active"] {
+  display: block;
+}
+#editor-textareas textarea[data-display="hidden"] {
+  display: none;
+}
+
+#editor textarea {
+  width: 100%;
+  height: 100%;
+  outline: none;
+  padding: 10px 20px;
+  font-family: "LexendDeca";
+}
+#preview-container {
+  display: flex;
+}
+iframe#preview {
+  width: 100%;
+  height: 100%;
+  border: none;
+  background-color: #ffffff;
+}
+
+#code-successful-dialog {
+  background: green;
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  display: inline-block;
+  padding: 12px 18px;
+  display: none;
+}
+
+/*---------- Sign Up & Sign In Page ----------------*/
+#signup-header {
+  background: transparent;
+  text-align: center;
+  width: 100%;
+  margin: 60px auto;
+}
+#signup-page main {
+  height: 100%;
+}
+.sign-in-btn {
+  background-color: #29262b;
+}
+.auth-form {
+  border: 1px solid #575757;
+  padding: 20px;
+  max-width: 400px;
+  margin: auto;
+}
+.auth-form h1 {
+  text-align: center;
+  margin-bottom: 24px;
+}
+.auth-form form {
+  display: grid;
+  gap: 12px;
+}
+.auth-form form input {
+  padding: 12px 6px;
+  border-radius: 10px;
+  outline: none;
+}
+.auth-form form button {
+  background-color: #c83eff;
+  color: #fff;
+  margin-top: 24px;
+  margin-bottom: 12px;
+}
+.auth-form p a {
+  color: #c83eff;
+}
+.auth-form p a:hover {
+  text-decoration: underline;
+}
+
+/*--------- Styling Profile Page ------------*/
+#profile {
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  grid-template-rows: auto 1fr;
+  height: 100vh;
+}
+#profile header {
+  grid-column: 1 / 6;
+}
+#profile .profile-navigation {
+  grid-column: 1/ 2;
+  background: #06000b;
+  display: flex;
+  flex-direction: column;
+}
+#profile .profile-navigation a {
+  padding: 12px;
+  display: inline-block;
+}
+#profile .profile-navigation a:hover {
+  background: #c83eff;
+}
+#profile .profile-details {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  padding: 24px;
+  gap: 60px;
+}
+#profile .profile-details form .form-group {
+  display: grid;
+  width: 100%;
+  grid-template-columns: 150px 1fr;
+  margin-bottom: 24px;
+}
+#profile .profile-details form .form-group input {
+  font-size: 16px;
+  font-weight: 400;
+  padding: 12px 18px;
+  border-radius: 5px;
+  display: inline-block;
+}
+#profile .profile-details .user-avatar-container .user-avatar {
+  width: 100%;
+}
+#profile .profile-details .user-avatar-container .user-avatar img {
+  width: 100%;
+}
+#profile .profile-details .user-avatar-container .user-avatar-actions {
+  display: grid;
+  margin-top: 24px;
+}
+/*---------- Edit Profile Page Styling-----------*/
+.edit-profile-submit,
+#submit-search,
+#profile .profile-details .user-avatar-container .user-avatar-actions button {
+  background: #e100ff;
+  color: #fff;
+}
+
+/*------- Styling Search Result Page --------*/
+
+#searchResult #hero {
+  text-align: center;
+  padding-top: 100px;
+  padding-bottom: 100px;
+  border-bottom: 0.5px solid #575757;
+}
+#searchResult #hero h1 {
+  font-size: 48px;
+  margin-bottom: 24px;
+}
+#searchResult h2 {
+  text-align: center;
+  font-size: 36px;
+  margin: 24px auto;
+}
+
+/*--------- Styling manage users page --------*/
+
+#profile .users-details table {
+  width: 100%;
+}
+#profile .users-details table {
+  border: 1px solid #47424a;
+}
+#profile .users-details table th,
+#profile .users-details table td {
+  padding: 4px;
+  vertical-align: center;
+  border: 1px solid #47424a;
+}
+
+#profile .user-profile-image {
+  width: 48px;
+  height: 48px;
+  border-radius: 4px;
+  overflow: hidden;
+}
+#profile .user-profile-image img {
+  width: 100%;
+  height: 100%;
+}
