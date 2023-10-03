@@ -6,7 +6,6 @@ if (isset($_SESSION['username'])) {
     header('Location: http://localhost/csp');
 }
 
-
 if (isset($_POST['signup_button'])) {
     include 'config.php';
 
